@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo-Feed Bootstrap</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Roboto:ital,wght@1,100&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container-fluid">
+        <!-- Nav Bar -->
+        <nav class="navbar sticky-top bg-light w-100" >
+            <div class="d-flex flex-row justify-content-between w-100">
+                <div class=""> <!-- Branding on the left -->
+                    <a class="navbar-brand" href="#">
+                      <i class="fa-brands fa-instagram"></i>
+                      <strong>InstaPeak</strong>
+                    </a>
+                </div>               
+                <div class="d-flex flex-row"> <!-- Buttons on the right -->
+                    <!-- Button trigger modal -->
+                     <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        Create a new post
+                     </button>
+                      
+                    <!-- Dropdown -->
+                    <div class="btn-group ms-1">
+                        <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fa-solid fa-gear"></i>
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-end" x-placement="bottom-end" style="position: absolute; top: 40px; left:-100px;">
+                            <button class="dropdown-item" type="button">Profile</button>
+                            <button class="dropdown-item" type="button">Accesibility</button>
+                            <button class="dropdown-item" type="button">Privacy and Data</button>
+                            <hr class="dropdown-divider">
+                            <button class="dropdown-item text-danger" type="button">Log out</button>
+                        </div>
+                    </div>                    
+                </div>
+            </div>
+        </nav>
+        
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Create a new post</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label for="exampleFormControlTextarea1" class="form-label"><strong>Caption:</strong></label>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="2"></textarea>
+                    </div>
+                    <div>
+                        <button type="button" class="btn btn-light" data-bs-toggle="popover" title="Button_Camera" data-bs-content="Popover body content is set in this attribute."><i class="fa-solid fa-camera"></i></button>
+                        <button type="button" class="btn btn-light" data-bs-toggle="popover" title="Button_Location" data-bs-content="Popover body content is set in this attribute."><i class="fa-solid fa-location-dot"></i></button>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-success" data-bs-dismiss="modal">Publish</button>
+                </div>
+            </div>
+            </div>
+        </div>
+        
+        <!-- Mode Bar -->
+        <div class="nav justify-content-center">
+            <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                <li class="nav-item" role="presentation">
+                <button class="nav-link  active" id="pills-grid-tab" data-bs-toggle="pill" data-bs-target="#pills-grid" type="button" role="tab" aria-controls="pills-grid" aria-selected="true">
+                    <i class="fa-solid fa-solar-panel"></i>
+                </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                <button class="nav-link " id="pills-strip-tab" data-bs-toggle="pill" data-bs-target="#pills-strip" type="button" role="tab" aria-controls="pills-strip" aria-selected="false">
+                    <i class="fa-solid fa-square"></i>
+                </button>
+                </li>
+            </ul>
+        </div>
+        <!-- Contents inside Mode Bar -->
+        <div class="tab-content" id="pills-tabContent">
+            <!-- Grid Mode -->
+            <div class="tab-pane fade show active" id="pills-grid" role="tabpanel" aria-labelledby="pills-grid-tab" tabindex="0">
+                <div class="container-fluid">
+                    <div class="row row_photofeed g-2 p-1 grid-image-sizing ">
+                        <div class="col-4"><img class="img-fluid grid-image-sizing" src="https://picsum.photos/id/675/600/400"></img></div>
+                        <div class="col-4"><img class="img-fluid grid-image-sizing" src="https://picsum.photos/600/1000?random=2"></img></div>
+                        <div class="col-4"><img class="img-fluid grid-image-sizing" src="https://picsum.photos/800/400?random=3"></img></div>
+                           
+                    </div>
+                    <div class="row row_photofeed g-2 p-1 grid-image-sizing ">
+                        <div class="col-4"><img class="img-fluid grid-image-sizing" src="https://picsum.photos/600/400?random=4"></img></div>
+                        <div class="col-4"><img class="img-fluid grid-image-sizing" src="https://picsum.photos/600/400?random=5"></img></div>
+                        <div class="col-4"><img class="img-fluid grid-image-sizing" src="https://picsum.photos/600/400?random=6"></img></div>
+        
+                    </div>
+                    <div class="row row_photofeed g-2 p-1 grid-image-sizing">
+                        <div class="col-4"><img class="img-fluid grid-image-sizing" src="https://picsum.photos/600/400?random=7"></img></div>
+                        <div class="col-4"><img class="img-fluid grid-image-sizing" src="https://picsum.photos/600/400?random=8"></img></div>
+                        <div class="col-4"><img class="img-fluid grid-image-sizing" src="https://picsum.photos/600/400?random=9"></img></div>
+                    </div>
+                </div>
+            </div>
+            <!-- Post Mode -->    
+            <div class="container tab-pane fade justify-content-center col-5" id="pills-strip" role="tabpanel" aria-labelledby="pills-strip-tab" tabindex="0">
+                <!-- Post -->
+                <div class="post_container">
+                    <div class="post border border-2 rounded-3 py-2 mb-3">
+                        <div class="row mb-1">
+                            <div class="col-1 ms-2">
+                                <i class="fa-brands fa-html5 fs-1 text-center"></i>
+                            </div>
+                            <div class="col-3">
+                                <h4 class="fs-5 m-0 f-roboto"">HTML5</h4>
+                                <p class="fs-6 m-0 f-roboto">Rigoberto</p>
+                            </div>
+                            <div class="col"></div>
+                            <div class="col-1">
+                                <i class="fa-solid fa-ellipsis-vertical fs-2 text-center"></i>
+                            </div>
+                        </div>
+                        <div class="row picture">
+                            <div class="col">
+                                <img class="img-fluid" src="https://picsum.photos/id/675/600/400"></img>
+                            </div>
+                        </div>
+                        <div class="row m-1 p-2">
+                            <div class="col-4">
+                                <div class="row m-0 p-0">
+                                    <div class="col m-0 p-0"><i class="fa-regular fa-heart fs-3"></i></div>
+                                    <div class="col m-0 p-0"><i class="fa-regular fa-comment fs-3"></i></div>
+                                    <div class="col m-0 p-0"><i class="fa-regular fa-paper-plane fs-3"></i></div>
+                                </div>
+                            </div>
+                            <div class="col"></div>                            
+                            <div class="col-1"><i class="fa-regular fa-bookmark fs-3"></i></div>
+                        </div>
+                        <div class="row p-1 ms-2">
+                            <div class="col">
+                                <p class="f-roboto">Liked <strong>4GeeksAcademy, html5, Web</strong> and <strong>100,000 others</strong></p>
+                            </div>
+                        </div>
+                        <div class="row p-2">
+                            <div class="col">
+                                <p class="f-dancingScript fs-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque iste impedit exercitationem magni quae sapiente culpa incidunt illum velit beatae, accusantium dolores nobis atque nesciunt, deleniti et, necessitatibus debitis explicabo.</p>
+                            </div>
+                        </div>
+                    </div>      
+                </div>
+                <!-- Post -->
+                <div class="post_container">
+                    <div class="post border border-2 rounded-3 py-2 mb-3">
+                        <div class="row mb-1">
+                            <div class="col-1 ms-2">
+                                <i class="fa-brands fa-html5 fs-1 text-center"></i>
+                            </div>
+                            <div class="col-3">
+                                <h4 class="fs-5 m-0 f-roboto"">HTML5</h4>
+                                <p class="fs-6 m-0 f-roboto">Rigoberto</p>
+                            </div>
+                            <div class="col"></div>
+                            <div class="col-1">
+                                <i class="fa-solid fa-ellipsis-vertical fs-2 text-center"></i>
+                            </div>
+                        </div>
+                        <div class="row picture">
+                            <div class="col">
+                                <img class="img-fluid" src="https://picsum.photos/600/1000?random=2"></img>
+                            </div>
+                        </div>
+                        <div class="row m-1 p-2">
+                            <div class="col-4">
+                                <div class="row m-0 p-0">
+                                    <div class="col m-0 p-0"><i class="fa-regular fa-heart fs-3"></i></div>
+                                    <div class="col m-0 p-0"><i class="fa-regular fa-comment fs-3"></i></div>
+                                    <div class="col m-0 p-0"><i class="fa-regular fa-paper-plane fs-3"></i></div>
+                                </div>
+                            </div>
+                            <div class="col"></div>                            
+                            <div class="col-1"><i class="fa-regular fa-bookmark fs-3"></i></div>
+                        </div>
+                        <div class="row p-1 ms-2">
+                            <div class="col">
+                                <p class="f-roboto">Liked <strong>4GeeksAcademy, html5, Web</strong> and <strong>100,000 others</strong></p>
+                            </div>
+                        </div>
+                        <div class="row p-2">
+                            <div class="col">
+                                <p class="f-dancingScript fs-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque iste impedit exercitationem magni quae sapiente culpa incidunt illum velit beatae, accusantium dolores nobis atque nesciunt, deleniti et, necessitatibus debitis explicabo.</p>
+                            </div>
+                        </div>
+                    </div>      
+                </div>
+                <!-- Post -->
+                <div class="post_container">
+                    <div class="post border border-2 rounded-3 py-2 mb-3">
+                        <div class="row mb-1">
+                            <div class="col-1 ms-2">
+                                <i class="fa-brands fa-html5 fs-1 text-center"></i>
+                            </div>
+                            <div class="col-3">
+                                <h4 class="fs-5 m-0 f-roboto"">HTML5</h4>
+                                <p class="fs-6 m-0 f-roboto">Rigoberto</p>
+                            </div>
+                            <div class="col"></div>
+                            <div class="col-1">
+                                <i class="fa-solid fa-ellipsis-vertical fs-2 text-center"></i>
+                            </div>
+                        </div>
+                        <div class="row picture">
+                            <div class="col">
+                                <img class="img-fluid" src="https://picsum.photos/800/400?random=3"></img>
+                            </div>
+                        </div>
+                        <div class="row m-1 p-2">
+                            <div class="col-4">
+                                <div class="row m-0 p-0">
+                                    <div class="col m-0 p-0"><i class="fa-regular fa-heart fs-3"></i></div>
+                                    <div class="col m-0 p-0"><i class="fa-regular fa-comment fs-3"></i></div>
+                                    <div class="col m-0 p-0"><i class="fa-regular fa-paper-plane fs-3"></i></div>
+                                </div>
+                            </div>
+                            <div class="col"></div>                            
+                            <div class="col-1"><i class="fa-regular fa-bookmark fs-3"></i></div>
+                        </div>
+                        <div class="row p-1 ms-2">
+                            <div class="col">
+                                <p class="f-roboto">Liked <strong>4GeeksAcademy, html5, Web</strong> and <strong>100,000 others</strong></p>
+                            </div>
+                        </div>
+                        <div class="row p-2">
+                            <div class="col">
+                                <p class="f-dancingScript fs-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque iste impedit exercitationem magni quae sapiente culpa incidunt illum velit beatae, accusantium dolores nobis atque nesciunt, deleniti et, necessitatibus debitis explicabo.</p>
+                            </div>
+                        </div>
+                    </div>      
+                </div>    
+                <!-- Post -->
+                <div class="post_container">
+                    <div class="post border border-2 rounded-3 py-2 mb-3">
+                        <div class="row mb-1">
+                            <div class="col-1 ms-2">
+                                <i class="fa-brands fa-html5 fs-1 text-center"></i>
+                            </div>
+                            <div class="col-3">
+                                <h4 class="fs-5 m-0 f-roboto"">HTML5</h4>
+                                <p class="fs-6 m-0 f-roboto">Rigoberto</p>
+                            </div>
+                            <div class="col"></div>
+                            <div class="col-1">
+                                <i class="fa-solid fa-ellipsis-vertical fs-2 text-center"></i>
+                            </div>
+                        </div>
+                        <div class="row picture">
+                            <div class="col">
+                                <img class="img-fluid" src="https://picsum.photos/600/400?random=4"></img>
+                            </div>
+                        </div>
+                        <div class="row m-1 p-2">
+                            <div class="col-4">
+                                <div class="row m-0 p-0">
+                                    <div class="col m-0 p-0"><i class="fa-regular fa-heart fs-3"></i></div>
+                                    <div class="col m-0 p-0"><i class="fa-regular fa-comment fs-3"></i></div>
+                                    <div class="col m-0 p-0"><i class="fa-regular fa-paper-plane fs-3"></i></div>
+                                </div>
+                            </div>
+                            <div class="col"></div>                            
+                            <div class="col-1"><i class="fa-regular fa-bookmark fs-3"></i></div>
+                        </div>
+                        <div class="row p-1 ms-2">
+                            <div class="col">
+                                <p class="f-roboto">Liked <strong>4GeeksAcademy, html5, Web</strong> and <strong>100,000 others</strong></p>
+                            </div>
+                        </div>
+                        <div class="row p-2">
+                            <div class="col">
+                                <p class="f-dancingScript fs-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque iste impedit exercitationem magni quae sapiente culpa incidunt illum velit beatae, accusantium dolores nobis atque nesciunt, deleniti et, necessitatibus debitis explicabo.</p>
+                            </div>
+                        </div>
+                    </div>      
+                </div>    
+                <!-- Post -->
+                <div class="post_container">
+                    <div class="post border border-2 rounded-3 py-2 mb-3">
+                        <div class="row mb-1">
+                            <div class="col-1 ms-2">
+                                <i class="fa-brands fa-html5 fs-1 text-center"></i>
+                            </div>
+                            <div class="col-3">
+                                <h4 class="fs-5 m-0 f-roboto"">HTML5</h4>
+                                <p class="fs-6 m-0 f-roboto">Rigoberto</p>
+                            </div>
+                            <div class="col"></div>
+                            <div class="col-1">
+                                <i class="fa-solid fa-ellipsis-vertical fs-2 text-center"></i>
+                            </div>
+                        </div>
+                        <div class="row picture">
+                            <div class="col">
+                                <img class="img-fluid" src="https://picsum.photos/600/400?random=4"></img>
+                            </div>
+                        </div>
+                        <div class="row m-1 p-2">
+                            <div class="col-4">
+                                <div class="row m-0 p-0">
+                                    <div class="col m-0 p-0"><i class="fa-regular fa-heart fs-3"></i></div>
+                                    <div class="col m-0 p-0"><i class="fa-regular fa-comment fs-3"></i></div>
+                                    <div class="col m-0 p-0"><i class="fa-regular fa-paper-plane fs-3"></i></div>
+                                </div>
+                            </div>
+                            <div class="col"></div>                            
+                            <div class="col-1"><i class="fa-regular fa-bookmark fs-3"></i></div>
+                        </div>
+                        <div class="row p-1 ms-2">
+                            <div class="col">
+                                <p class="f-roboto">Liked <strong>4GeeksAcademy, html5, Web</strong> and <strong>100,000 others</strong></p>
+                            </div>
+                        </div>
+                        <div class="row p-2">
+                            <div class="col">
+                                <p class="f-dancingScript fs-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque iste impedit exercitationem magni quae sapiente culpa incidunt illum velit beatae, accusantium dolores nobis atque nesciunt, deleniti et, necessitatibus debitis explicabo.</p>
+                            </div>
+                        </div>
+                    </div>      
+                </div>       
+                <!-- Post -->
+                <div class="post_container">
+                    <div class="post border border-2 rounded-3 py-2 mb-3">
+                        <div class="row mb-1">
+                            <div class="col-1 ms-2">
+                                <i class="fa-brands fa-html5 fs-1 text-center"></i>
+                            </div>
+                            <div class="col-3">
+                                <h4 class="fs-5 m-0 f-roboto"">HTML5</h4>
+                                <p class="fs-6 m-0 f-roboto">Rigoberto</p>
+                            </div>
+                            <div class="col"></div>
+                            <div class="col-1">
+                                <i class="fa-solid fa-ellipsis-vertical fs-2 text-center"></i>
+                            </div>
+                        </div>
+                        <div class="row picture">
+                            <div class="col">
+                                <img class="img-fluid" src="https://picsum.photos/600/400?random=4"></img>
+                            </div>
+                        </div>
+                        <div class="row m-1 p-2">
+                            <div class="col-4">
+                                <div class="row m-0 p-0">
+                                    <div class="col m-0 p-0"><i class="fa-regular fa-heart fs-3"></i></div>
+                                    <div class="col m-0 p-0"><i class="fa-regular fa-comment fs-3"></i></div>
+                                    <div class="col m-0 p-0"><i class="fa-regular fa-paper-plane fs-3"></i></div>
+                                </div>
+                            </div>
+                            <div class="col"></div>                            
+                            <div class="col-1"><i class="fa-regular fa-bookmark fs-3"></i></div>
+                        </div>
+                        <div class="row p-1 ms-2">
+                            <div class="col">
+                                <p class="f-roboto">Liked <strong>4GeeksAcademy, html5, Web</strong> and <strong>100,000 others</strong></p>
+                            </div>
+                        </div>
+                        <div class="row p-2">
+                            <div class="col">
+                                <p class="f-dancingScript fs-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque iste impedit exercitationem magni quae sapiente culpa incidunt illum velit beatae, accusantium dolores nobis atque nesciunt, deleniti et, necessitatibus debitis explicabo.</p>
+                            </div>
+                        </div>
+                    </div>      
+                </div>            
+            </div>
+        </div>
+    </div>
+
+    <script
+    src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+    integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+    crossorigin="anonymous"
+    ></script>
+    <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+    integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+    crossorigin="anonymous"
+    ></script>
+    <script
+     src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"
+     ></script>
+    <script
+     src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"
+     ></script>
+    <script
+     src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"
+     ></script>   
+</body>
+</html>

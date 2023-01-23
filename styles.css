@@ -1,0 +1,31 @@
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+    color: blue;
+    background-color: unset;
+}
+.nav-pills .nav-link {
+    color: gray;   
+}
+.grid-image-sizing{
+    object-fit: cover;
+    /*width: 100%;*/
+    overflow: hidden;
+}
+.row_photofeed{
+    max-height: 300px;
+
+}
+.f-roboto{
+    font-family: 'Roboto', sans-serif;
+}
+.f-dancingScript{
+    font-family: 'Dancing Script', cursive;
+}
+.hover02  img {
+	width: 300px;
+	height: auto;
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+}
+.hover02 :hover img {
+	width: 350px;
+}
