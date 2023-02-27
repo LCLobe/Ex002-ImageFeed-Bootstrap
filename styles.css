@@ -5,14 +5,23 @@
 .nav-pills .nav-link {
     color: gray;   
 }
-.grid-image-sizing{
+.grid-image-sizing, .post-grid-image-sizing{
+    width: 100%;
+    height: 350px;
     object-fit: cover;
-    /*width: 100%;*/
     overflow: hidden;
 }
-.row_photofeed{
+.grid-image-sizing:hover{
+    transform: scale(1.1);
+    transition: transform .4s;
+}
+.image-wrapper, .post-image-wrapper {
+    max-height: 350px;
+    object-fit: cover;
+}
+.row-photofeed{
     max-height: 300px;
-
+    overflow: hidden;
 }
 .f-roboto{
     font-family: 'Roboto', sans-serif;
@@ -28,4 +37,8 @@
 }
 .hover02 :hover img {
 	width: 350px;
+}
+
+.post, .post-container{
+    box-sizing: border-box;
 }
